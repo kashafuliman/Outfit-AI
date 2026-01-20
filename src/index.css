@@ -1,0 +1,77 @@
+/* stylelint-disable */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    body {
+        @apply text-gray-800 bg-white;
+        font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    }
+}
+
+@layer components {
+    .container {
+        @apply max-w-7xl mx-auto px-6;
+    }
+
+    @keyframes gradient-flow {
+        0% {
+            background-position: 0% 50%;
+        }
+
+        50% {
+            background-position: 100% 50%;
+        }
+
+        100% {
+            background-position: 0% 50%;
+        }
+    }
+
+    @keyframes float-text {
+
+        0%,
+        100% {
+            transform: translateY(0);
+        }
+
+        50% {
+            transform: translateY(-10px);
+        }
+    }
+
+    .gradient-text-1 {
+        @apply bg-clip-text text-transparent bg-gradient-to-r from-[#E940E1] via-[#A855F7] to-[#22D3EE];
+        background-size: 300% auto;
+        animation: gradient-flow 3s linear infinite, float-text 5s ease-in-out infinite;
+        -webkit-background-clip: text;
+        background-clip: text;
+        display: inline-block;
+    }
+
+    .gradient-text-2 {
+        @apply bg-clip-text text-transparent bg-gradient-to-r from-[#22D3EE] via-[#818CF8] to-[#E940E1];
+        background-size: 300% auto;
+        animation: gradient-flow 3s linear infinite, float-text 6s ease-in-out infinite;
+        -webkit-background-clip: text;
+        background-clip: text;
+        display: inline-block;
+    }
+
+    .glass-panel {
+        @apply bg-white/70 backdrop-blur-xl border border-white/40;
+    }
+
+    .btn-primary {
+        @apply bg-gradient-to-r from-[#FF00E5] via-[#A855F7] to-[#00E5FF] text-white font-normal rounded-full shadow-lg transition-all duration-300 transform hover:scale-105 hover:brightness-110 active:scale-95 active:brightness-90;
+    }
+
+    .btn-primary:hover {
+        box-shadow: 0 0 30px rgba(168, 85, 247, 0.6);
+    }
+
+    .btn-outline {
+        @apply bg-white text-[#A855F7] border-2 border-[#A855F7] font-normal rounded-full shadow-sm transition-all duration-300 transform hover:bg-[#A855F7] hover:text-white hover:scale-105 hover:shadow-lg active:scale-95 active:bg-[#9333EA];
+    }
+}
